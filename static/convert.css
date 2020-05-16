@@ -1,0 +1,35 @@
+
+.one {
+  color: red;
+  font-size: 20px;
+}
+.two {
+  color: rgb(255, 116, 2);
+  font-size: 20px;
+}
+.three {
+  color: rgb(246, 246, 3);
+  font-size: 20px;
+}
+.four {
+  color: rgb(177, 253, 0);
+  font-size: 20px;
+}
+.label {
+  font-size:25px;
+  color:aliceblue;
+  width:100px;
+}
+.column_content{
+  font-size:25px;
+  display:flex;
+  justify-content: space-between;
+}
+
+.word_column_content {
+  display:flex;
+} 
+.column {
+  width: 50px;
+  font-size: 20px;
+}

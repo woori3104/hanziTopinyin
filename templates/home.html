@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Hanzi to Pinyin
+	</title>
+	<link href={{url_for('static', filename='style.css')}} rel="stylesheet">
+	</link>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <h1 class="logo">Hanzi to Pinyin</h1>
+    </a>
+	</header>
+	<main>
+    <form action="/convert" method="get">
+      <section class="terms">
+        <div class = "input">
+          <div>
+            <span>
+              Input Wodrd
+            </span>
+            <input id="site-input" name="word" autocomplete="off" placeholder = "Input you're interested site"/>
+          </div>
+          <div>
+            <span>
+              type
+            </span>
+            <select name = 'term'>
+              {% for term in terms %}
+                <option>{{term}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div>
+            <button type="submit">convert</button>
+          </div>
+        </div>
+          
+      </section>
+    </form>
+  </main>
+
+
+</body>
+
+</html>

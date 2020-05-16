@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Hanzi to Pinyin
+	</title>
+	<link href={{url_for('static', filename='style.css')}} rel="stylesheet">
+	</link>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <h1 class="logo">Hanzi to Pinyin</h1>
+    </a>
+	</header>
+	<main id = 'result'>
+    <div class = "wrap">
+      <div class="input Contents">
+        <div class = "labels">
+          <span class="label">
+            Input Word % Converted Pinyin: 
+          </span>
+        </div>
+        <div class = "word_column_content">
+          {% for word in words%}
+            {% if words[word][1] == 1 %}
+              <div class="column">
+                <div class = "column_content">
+                  <span class = "one column_content">
+                    {{word}}
+                  </span>
+                </div>
+                <div class = "column_content">
+                  <span class = "column_content">
+                    {{words[word][0]}}
+                  </span>
+                </div>
+              </div>
+            {% elif  words[word][1] == 2 %}
+              <div class="column">
+                <div class = "column_content">
+                  <span class = "two column_content">
+                    {{word}}
+                  </span>
+                </div>
+                <div class = "column_content">
+                  <span class = "column_content">
+                    {{words[word][0]}}
+                  </span>
+                </div>
+              </div>
+            {% elif  words[word][1] == 3 %}
+              <div class="column">
+                <div class = "column_content">
+                  <span class = "three column_content">
+                    {{word}}
+                  </span>
+                </div>
+                <div class = "column_content">
+                  <span class = "column_content">
+                    {{words[word][0]}}
+                  </span>
+                </div>
+              </div>
+            {% elif  words[word][1] == 4 %}
+              <div class="column">
+                <div class = "column_content">
+                  <span class = "four column_content">
+                    {{word}}
+                  </span>
+                </div>
+                <div class = "column_content">
+                  <span class = "column_content">
+                    {{words[word][0]}}
+                  </span>
+                </div>
+              </div>
+            {% elif  words[word][1] == 0 %}
+              <div class="column">
+                <div class = "column_content">
+                  <span class = "zero column_content">
+                    {{word}}
+                  </span>
+                </div>
+                <div class = "column_content">
+                  <span class = "column_content">
+                    {{words[word][0]}}
+                  </span>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <a href="/">
+      <h1 class="logo">{{src}} to {{dest}}</h1>
+    </a>
+    <div class = "wrap">
+      <div class = "input_column">
+        <div class = "labels">
+          <span class="label">
+            Input Word : 
+          </span>
+        </div>
+        <div class = "word_column_content">
+          {% for word in words%}
+            <div class = "column_content">
+              <span class = "contens">
+                {{word}}
+              </span>
+            </div>
+          {% endfor %}
+        </div>
+        <div class = "labels">
+          <div class = "label">
+            <span>
+              Translated Word : 
+            </span>
+          </div>
+          <div class = "word_column_content">
+            <span>
+              {{trans}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+	</main>
+</body>
+
+</html>
